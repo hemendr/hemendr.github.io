@@ -1,0 +1,29 @@
+{{- if .Values.persistentVolume.enabled }}
+  {{- $root := . -}}
+  {{- range .Values.persistentVolume.hosts }}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: "rabbitmq-data-{{ . }}"
+spec:
+  storageClassName: {{ $root.Values.persistentVolume.storageClass }}
+  capacity:
+    storage: {{ $root.Values.persistentVolume.size }}
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: "/data/rabbitmq"
+    type: DirectoryOrCreate
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - "{{ . }}"
+  {{- end }}
+{{- end }}
+
