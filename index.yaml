@@ -3,10 +3,10 @@ entries:
   rabbitmq-ha:
   - apiVersion: v1
     appVersion: 3.7.8
-    created: 2019-04-06T00:07:01.083364904-06:00
+    created: 2019-04-06T06:21:13.71699474-06:00
     description: Highly available RabbitMQ cluster, the open source message broker
       software that implements the Advanced Message Queuing Protocol (AMQP).
-    digest: e4758cf385c96463f28c2ba6f60acfdd5d50b958e51c0a676134eb931478c1b7
+    digest: 6524d2a0190e57050d487100f603bd38b118a318f510f3715695c67077043c84
     home: https://www.rabbitmq.com
     icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
     keywords:
@@ -24,6 +24,6 @@ entries:
     - https://github.com/rabbitmq/rabbitmq
     - https://github.com/docker-library/rabbitmq
     urls:
-    - rabbitmq-ha-1.18.0.tgz
-    version: 1.18.0
-generated: 2019-04-06T00:07:01.081467198-06:00
+    - rabbitmq-ha-1.18.1.tgz
+    version: 1.18.1
+generated: 2019-04-06T06:21:13.71283375-06:00
