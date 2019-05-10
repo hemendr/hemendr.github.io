@@ -7,7 +7,7 @@ that implements the Advanced Message Queuing Protocol (AMQP).
 ## TL;DR;
 
 ```bash
-$ helm install symbotic/rabbitmq-ha
+$ helm install sss/rabbitmq-ha
 ```
 
 ## Introduction
@@ -26,7 +26,7 @@ deployment on a [Kubernetes](http://kubernetes.io) cluster using the
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release symbotic/rabbitmq-ha
+$ helm install --name my-release hemendr/rabbitmq-ha
 ```
 
 The command deploys RabbitMQ on the Kubernetes cluster in the default
@@ -45,7 +45,7 @@ the first place, you can upgrade using the following command:
 $ export ERLANGCOOKIE=$(kubectl get secrets -n <NAMESPACE> <HELM_RELEASE_NAME>-rabbitmq-ha -o jsonpath="{.data.rabbitmq-erlang-cookie}" | base64 --decode)
 $ helm upgrade \
     --set rabbitmqErlangCookie=$ERLANGCOOKIE \
-    <HELM_RELEASE_NAME> symbotic/rabbitmq-ha
+    <HELM_RELEASE_NAME> ssss/rabbitmq-ha
 ```
 
 ## Uninstalling the Chart
@@ -162,7 +162,7 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```bash
 $ helm install --name my-release \
   --set rabbitmqUsername=admin,rabbitmqPassword=secretpassword,rabbitmqErlangCookie=secretcookie \
-    symbotic/rabbitmq-ha
+    ssss/rabbitmq-ha
 ```
 
 The above command sets the RabbitMQ admin username and password to `admin` and
@@ -173,7 +173,7 @@ Alternatively, a YAML file that specifies the values for the parameters can be
 provided while installing the chart. For example,
 
 ```bash
-$ helm install --name my-release -f values.yaml symbotic/rabbitmq-ha
+$ helm install --name my-release -f values.yaml ssss/rabbitmq-ha
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
@@ -219,7 +219,7 @@ data:
 Then, install the chart with the above configuration:
 
 ```
-$ helm install --name my-release --set existingConfigMap=true symbotic/rabbitmq-ha
+$ helm install --name my-release --set existingConfigMap=true sssss/rabbitmq-ha
 ```
 
 ### Custom Secret
